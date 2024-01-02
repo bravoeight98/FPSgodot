@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://scene/weapons/pistol/pistol_a/pistol_a.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/weapons/rifle/rifle_a/rifle_a.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/weapons/unarmed/unarmed.tscn" type="PackedScene" id=4]
