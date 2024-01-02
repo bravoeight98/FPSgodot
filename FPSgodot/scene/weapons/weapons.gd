@@ -44,9 +44,11 @@ func is_unequip_finished():
 
 # Show/Hide Weapon
 func show_weapon():
+	print("show weapon")
 	visible = true
 
 func hide_weapon():
+	print("hide weapon")
 	visible = false
 
 
