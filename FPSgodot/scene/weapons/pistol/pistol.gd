@@ -1,16 +1,12 @@
 extends Weapon
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	animation_player = $AnimationPlayer
+	animation_player.connect("animation_finished", self, "on_animation_finish")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func on_animation_finish(anim_name):
+	.on_animation_finish(anim_name)
