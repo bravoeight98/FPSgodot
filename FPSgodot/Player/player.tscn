@@ -36,13 +36,9 @@ script = ExtResource( 6 )
 
 [node name="Pistol_A" parent="CamRoot/Weapons" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.3, -0.7, 0.06 )
-equip_speed = 1.5
-unequip_speed = 1.5
 
 [node name="Rifle_A" parent="CamRoot/Weapons" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.3, -0.7, 0.06 )
-equip_speed = 1.5
-unequip_speed = 1.5
 
 [node name="Unarmed" parent="CamRoot/Weapons" instance=ExtResource( 4 )]
 equip_speed = 1.5
