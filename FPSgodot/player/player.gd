@@ -43,6 +43,17 @@ func _physics_process(delta):
 	# Normalizing the input directions
 	dir = dir.normalized()
 	
+	# Apply gravity
+	velocity.y += GRAVITY * delta
+	
+	if is_on_floor():
+		jump_counter = 0
+	
+	# Jump
+	if Input.is_action_just_pressed("jump") and jump_counter < 2:
+		jump_counter += 1
+		velocity.y = JUMP_SPEED
+	
 	# Set speed and target velocity
 	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
 	var target_vel = dir * speed
