@@ -12,6 +12,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		#Rotate camera verticaly 
 		$CamRoot.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * -1))
+		$CamRoot.rotation_degrees.x = clamp($CamRoot.rotation_degrees.x, -75, 75)
 		
 		#Rotate camera horizontaly 
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1)) 
