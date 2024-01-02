@@ -3,6 +3,7 @@ extends KinematicBody
 const MOUSE_SENSITIVITY = 0.1
 
 onready var camera = $CamRoot/Camera
+onready var weapon_manager = $CamRoot/Weapons
 
 # Movement
 var velocity = Vector3.ZERO
@@ -33,6 +34,15 @@ func _process(delta):
 
 func _physics_process(delta):
 	
+	process_movement_inputs()
+	process_weapons()
+	process_jump(delta)
+	process_movement(delta)
+
+
+
+
+func process_movement_inputs():
 	# Get the input directions
 	dir = Vector3.ZERO
 	
@@ -47,7 +57,8 @@ func _physics_process(delta):
 	
 	# Normalizing the input directions
 	dir = dir.normalized()
-	
+
+func process_jump(delta):
 	# Apply gravity
 	velocity.y += GRAVITY * delta
 	
@@ -58,7 +69,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and jump_counter < 2:
 		jump_counter += 1
 		velocity.y = JUMP_SPEED
-	
+
+func process_movement(delta):
 	# Set speed and target velocity
 	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
 	var target_vel = dir * speed
@@ -72,6 +84,14 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true, 4, deg2rad(45))
 
+func process_weapons():
+	if Input.is_action_just_pressed("empty"):
+		weapon_manager.change_weapon("Empty")
+	if Input.is_action_just_pressed("primary"):
+		weapon_manager.change_weapon("Primary")
+	if Input.is_action_just_pressed("secondary"):
+		weapon_manager.change_weapon("Secondary")
+
 
 
 func _input(event):
@@ -82,6 +102,14 @@ func _input(event):
 		
 		# Rotates the view horizontally
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
+	
+	if event is InputEventMouseButton:
+		if event.pressed:
+			match event.button_index:
+				BUTTON_WHEEL_UP:
+					weapon_manager.next_weapon()
+				BUTTON_WHEEL_DOWN:
+					weapon_manager.previous_weapon()
 
 
 
