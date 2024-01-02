@@ -40,7 +40,7 @@ margin_right = 40.0
 margin_bottom = 14.0
 text = "1"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Crosshair" type="ColorRect" parent="."]
 margin_left = 640.0
 margin_top = 320.0
 margin_right = 645.0
