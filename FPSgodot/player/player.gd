@@ -13,6 +13,12 @@ const SPEED = 10
 const SPRINT_SPEED = 20
 const ACCEL = 15.0
 
+# Jump
+const GRAVITY = -40.0
+const JUMP_SPEED = 15
+var jump_counter = 0
+const AIR_ACCEL = 9.0
+
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -40,6 +46,15 @@ func _physics_process(delta):
 	# Set speed and target velocity
 	var speed = SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
 	var target_vel = dir * speed
+	
+	# Smooth out the player's movement
+	var accel = ACCEL if is_on_floor() else AIR_ACCEL
+	current_vel = current_vel.linear_interpolate(target_vel, accel * delta)
+	
+	velocity.x = current_vel.x
+	velocity.z = current_vel.z
+	
+	velocity = move_and_slide(velocity, Vector3.UP, true, 4, deg2rad(45))
 
 func _input(event):
 	if event is InputEventMouseMotion:
