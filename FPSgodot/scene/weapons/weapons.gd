@@ -1,16 +1,71 @@
-extends Node
+extends Spatial
+class_name Weapon
+
+# References
+var weapon_manager = null
+var player = null
+var animation_player
+
+# Weapon States
+var is_equipped = false
+var is_firing = false
+var is_reloading = false
+
+# Weapon Parameters
+export var weapon_name = "Weapon"
+
+# Optional
+export var equip_speed = 1.0
+export var unequip_speed = 1.0
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
+# Equip/Unequip Cycle
+func equip():
+	animation_player.play("Equip", -1.0, equip_speed)
+	#update_ammo()
+
+func unequip():
+	animation_player.play("Unequip", -1.0, unequip_speed)
+
+func is_equip_finished():
+	if is_equipped:
+		return true
+	else:
+		return false
+
+func is_unequip_finished():
+	if is_equipped:
+		return false
+	else:
+		return true
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
+# Show/Hide Weapon
+func show_weapon():
+	visible = true
+
+func hide_weapon():
+	visible = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+# Animation Finished
+func on_animation_finish(anim_name):
+	match anim_name:
+		"Unequip":
+			is_equipped = false
+		"Equip":
+			is_equipped = true
+
+
+
+# Update Ammo
+func update_ammo(action = "Refresh"):
+	
+	var weapon_data = {
+		"Name" : weapon_name
+	}
+	
+	weapon_manager.update_hud(weapon_data)

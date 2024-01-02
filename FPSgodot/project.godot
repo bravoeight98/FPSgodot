@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://scene/weapons/weapons.gd"
+} ]
+_global_script_class_icons={
+"Weapon": ""
+}
+
 [application]
 
 config/name="Fp Sgodot"
