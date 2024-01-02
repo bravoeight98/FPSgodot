@@ -17,11 +17,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
 
 [node name="Upper" type="MeshInstance" parent="Root/Anchor/Body"]
-transform = Transform( 0.02, 0, 0, 0, 0.03, 0, 0, 0, 0.15, 0, 0.041, -0.095 )
+transform = Transform( 0.02, 0, 0, 0, 0.03, 0, 0, 0, 0.45, 0, 0.041, -0.397147 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
 
 [node name="Lower" type="MeshInstance" parent="Root/Anchor/Body"]
 transform = Transform( 0.02, 0, 0, 0, 0.0791418, 0.00438249, 0, -0.0116866, 0.0296782, 0, -0.013, 0.037 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../../../..")
+
+[node name="Lower2" type="MeshInstance" parent="Root/Anchor/Body"]
+transform = Transform( 0.02, 0, 0, 0, 0.08, 0, 0, 0, 0.03, 0, -0.013, -0.23 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
