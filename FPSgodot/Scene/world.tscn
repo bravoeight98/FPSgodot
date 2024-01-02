@@ -19,3 +19,6 @@ transform = Transform( -2.02032, 0, -0.739243, 0, 3, 0, 2.21773, 0, -0.673438, 1
 
 [node name="Obstacle4" parent="." instance=ExtResource( 2 )]
 transform = Transform( -2.82429, 0, 0.33721, 0, 5, 0, -1.01163, 0, -0.941429, 4.428, 5.2, 16.776 )
+
+[node name="Obstacle5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.33947, -0.888, 0.923698, -0.0612639, 4.92051, 0.166699, -0.93862, 0, -0.344954, -10.5452, 4.37768, 9.57561 )
