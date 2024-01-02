@@ -6,7 +6,7 @@ albedo_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 [sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
 
-[node name="Pistol" type="Spatial"]
+[node name="Pistol_A" type="Spatial"]
 
 [node name="Root" type="Spatial" parent="."]
 
