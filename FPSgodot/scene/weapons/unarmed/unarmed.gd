@@ -1,16 +1,24 @@
 extends Weapon
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func equip():
+	update_ammo()
+
+func unequip():
+	pass
+
+func is_equip_finished():
+	return true
+
+func is_unequip_finished():
+	return true
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func update_ammo(action = "Refresh"):
+	
+	var weapon_data = {
+		"Name" : weapon_name
+	}
+	
+	weapon_manager.update_hud(weapon_data)
