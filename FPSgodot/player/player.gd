@@ -20,12 +20,17 @@ var jump_counter = 0
 const AIR_ACCEL = 9.0
 
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+
+
+
 func _process(delta):
 	window_activity()
-	
+
+
+
 func _physics_process(delta):
 	
 	# Get the input directions
@@ -67,14 +72,18 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true, 4, deg2rad(45))
 
+
+
 func _input(event):
 	if event is InputEventMouseMotion:
-		#Rotate camera verticaly 
+		# Rotates the view vertically
 		$CamRoot.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * -1))
 		$CamRoot.rotation_degrees.x = clamp($CamRoot.rotation_degrees.x, -75, 75)
 		
-		#Rotate camera horizontaly 
-		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1)) 
+		# Rotates the view horizontally
+		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
+
+
 
 # To show/hide the cursor
 func window_activity():
