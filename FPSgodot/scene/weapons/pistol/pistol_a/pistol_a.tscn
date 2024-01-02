@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scene/weapons/pistol/pistol.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -52,6 +54,8 @@ tracks/0/keys = {
 }
 
 [node name="Pistol_A" type="Spatial"]
+script = ExtResource( 1 )
+weapon_name = "Pistol"
 
 [node name="Root" type="Spatial" parent="."]
 
