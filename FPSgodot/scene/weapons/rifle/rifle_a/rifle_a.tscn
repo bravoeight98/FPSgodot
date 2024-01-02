@@ -94,7 +94,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
 
 [node name="Upper" type="MeshInstance" parent="Root/Anchor/Body"]
-transform = Transform( 0.02, 0, 0, 0, 0.03, 0, 0, 0, 0.45, 0, 0.041, -0.397147 )
+transform = Transform( 0.02, 0, 0, 0, 0.03, 0, 0, 0, 0.45, 0, 0.041, -0.35 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../../../..")
 
