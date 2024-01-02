@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/player.gd" type="Script" id=1]
 [ext_resource path="res://weapons/pistol/pistol_a/pistol_a.tscn" type="PackedScene" id=2]
 [ext_resource path="res://weapons/rifle/rifle_a/rifle_a.tscn" type="PackedScene" id=3]
 [ext_resource path="res://weapons/unarmed/unarmed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/ui/hud/hud.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -38,3 +39,5 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.3, -0
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.3, -0.7, 0.06 )
 
 [node name="Unarmed" parent="CamRoot/Weapons" instance=ExtResource( 4 )]
+
+[node name="HUD" parent="CamRoot/Weapons" instance=ExtResource( 5 )]
