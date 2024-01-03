@@ -55,11 +55,13 @@ func hide_weapon():
 func on_animation_finish(anim_name):
 	match anim_name:
 		"Unequip":
-			print("hide weapon")
-			is_equipped = false
-		"Equip":
-			print("show weapon")
+			print("hide weapon", weapon_name, is_equipped)
+			#is_equipped = false
 			is_equipped = true
+		"Equip":
+			print("show weapon", weapon_name, is_equipped)
+			#is_equipped = true
+			is_equipped = false
 
 
 
