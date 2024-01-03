@@ -44,11 +44,9 @@ func is_unequip_finished():
 
 # Show/Hide Weapon
 func show_weapon():
-	print("show weapon")
 	visible = true
 
 func hide_weapon():
-	print("hide weapon")
 	visible = false
 
 
@@ -57,14 +55,16 @@ func hide_weapon():
 func on_animation_finish(anim_name):
 	match anim_name:
 		"Unequip":
+			print("hide weapon")
 			is_equipped = false
 		"Equip":
+			print("show weapon")
 			is_equipped = true
 
 
 
 # Update Ammo
-func update_ammo(action = "Refresh"):
+func update_ammo(_action = "Refresh"):
 	
 	var weapon_data = {
 		"Name" : weapon_name
