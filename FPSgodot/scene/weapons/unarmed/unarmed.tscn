@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scene/weapons/unarmed/unarmed.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Equip"
+
+[sub_resource type="Animation" id=2]
+resource_name = "Unequip"
 
 [node name="Unarmed" type="Spatial"]
 script = ExtResource( 1 )
 weapon_name = "Unarmed"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Equip = SubResource( 1 )
+anims/Unequip = SubResource( 2 )

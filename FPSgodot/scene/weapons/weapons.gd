@@ -64,7 +64,7 @@ func on_animation_finish(anim_name):
 
 
 # Update Ammo
-func update_ammo(_action = "Refresh"):
+func update_ammo(action = "Refresh"):
 	
 	var weapon_data = {
 		"Name" : weapon_name
